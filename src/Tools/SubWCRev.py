@@ -530,14 +530,16 @@ def main():
         opts, args = getopt.getopt(sys.argv[1:], "sb:", ["srcdir=","bindir="])
     except getopt.GetoptError:
         pass
-    sys.stdout.write(".git exists: " + str(os.path.isdir( ".git")) +"\n" )
-
+    
     for o, a in opts:
         if o in ("-s", "--srcdir"):
             srcdir = a
         if o in ("-b", "--bindir"):
             bindir = a
 
+    sys.stdout.write("srcdir: " + srcdir +"\n" )
+    sys.stdout.write(".git exists: " + str(os.path.isdir(srcdir + "/.git")) +"\n" )
+    
     # this is my no local git version
 
     i = RemoteMasterGitControl()
