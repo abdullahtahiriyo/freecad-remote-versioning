@@ -419,6 +419,10 @@ def main():
       out.writelines(lines)
       out.write('\n')
       out.close()
+      out  = open("%s/src/Build/Version.h" % (srcdir),"w");
+      out.writelines(lines)
+      out.write('\n')
+      out.close()
       sys.stdout.writelines(lines)
       sys.stdout.write('\n')
       i.printInfo()
