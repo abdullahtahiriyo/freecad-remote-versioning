@@ -407,7 +407,7 @@ def main():
     
     # this is my no local git version
 
-    i = LaunchPadDailyBuildsGitControl(githash)
+    i = LaunchPadDailyBuildsGitControl()
     
     if i.extractInfo(srcdir):
       file = open("%s/src/Build/Version.h.in" % (srcdir))
