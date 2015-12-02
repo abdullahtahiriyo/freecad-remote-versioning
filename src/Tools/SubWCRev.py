@@ -370,7 +370,7 @@ class LaunchPadDailyBuildsGitControl(VersionControl):
 	import datetime
         # commit time is more meaningfull than author time
         # use UTC
-        self.date = datetime.date.today() + "(Build time)"
+        self.date = str(datetime.date.today()) + "(Build time)"
 	self.url = "https://github.com/FreeCAD/FreeCAD"
 
     def printInfo(self):
