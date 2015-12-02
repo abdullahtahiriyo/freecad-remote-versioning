@@ -372,6 +372,7 @@ class LaunchPadDailyBuildsGitControl(VersionControl):
         # use UTC
         self.date = str(datetime.date.today()) + "(Build time)"
 	self.url = "https://github.com/FreeCAD/FreeCAD"
+	return True
 
     def printInfo(self):
         print "LaunchPad Daily Version Info"
@@ -402,7 +403,7 @@ def main():
 
     sys.stdout.write("srcdir: " + srcdir +"\n" )
     sys.stdout.write(".git exists: " + str(os.path.isdir(srcdir + "/.git")) +"\n" )
-    
+    sys.stdout.write("bindir: " + bindir +"\n" )
     #srcdir="/«BUILDDIR»/freecad-0.16+bzr4538+git9f4c54d+201512021532~ubuntu14.04.1"
     
     # this is my no local git version
@@ -418,6 +419,8 @@ def main():
       out.writelines(lines)
       out.write('\n')
       out.close()
+      sys.stdout.writelines(lines)
+      sys.stdout.write('\n')
       i.printInfo()
       sys.stdout.write("%s/src/Build/Version.h written\n" % (bindir))
     
