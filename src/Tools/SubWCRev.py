@@ -367,7 +367,7 @@ class LaunchPadDailyBuildsGitControl(VersionControl):
     def extractInfo(self, srcdir):
 	self.fhash = srcdir.split('+')[2].split('t')[1]
 	self.rev = srcdir.split('+')[1].split('r')[1] + "(Bzr)"
-	import time
+	import datetime
         # commit time is more meaningfull than author time
         # use UTC
         self.date = datetime.date.today() + "(Build time)"
