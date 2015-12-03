@@ -366,7 +366,8 @@ class LaunchPadDailyBuildsGitControl(VersionControl):
         
     def extractInfo(self, srcdir):
 	self.fhash = srcdir.split('+')[2].split('t')[1]
-	self.rev = srcdir.split('+')[1].split('r')[1] + "(Bzr)"
+	myrev = srcdir.split('+')[1].split('r')[1]
+	self.rev = str(int(myrev)+1460) + " (Estimated Git) "+ myrev + " (Bzr)"
 	import datetime
         # commit time is more meaningfull than author time
         # use UTC
